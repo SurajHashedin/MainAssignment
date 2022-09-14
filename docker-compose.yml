@@ -13,12 +13,13 @@ services:
     build: .
     #command: python manage.py runserver 0.0.0.0:8000
     command: bash -c "
-      python manage.py makemigrations
+      python manage.py migrate --fake api zero
+      && python manage.py makemigrations
       && python manage.py migrate
       && python manage.py runserver 0.0.0.0:8000
       "
     volumes:
-      - .:/code
+      - .:/code7
     ports:
       - "8000:8000"
     environment:
@@ -27,3 +28,7 @@ services:
       - POSTGRES_PASSWORD=postgres
     depends_on:
       - db
+
+            # python manage.py migrate --fake api zero
+      # && python rm -rf migrations
+      # && 
