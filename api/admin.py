@@ -1,6 +1,6 @@
 from django.contrib import admin
-from .models import (projects_table, issues_table, user,)
+from .models import (projects_table, issues_table, user, ticket_requests,)
 # Register your models here.
 
 
-admin.site.register((projects_table, issues_table, user,))
+admin.site.register((projects_table, issues_table, user, ticket_requests))

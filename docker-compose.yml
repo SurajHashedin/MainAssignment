@@ -6,29 +6,33 @@ services:
     volumes:
       - ./data/db:/var/lib/postgresql/data
     environment:
-      - POSTGRES_DB=postgres
+      - POSTGRES_DB=suraj
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
   web:
     build: .
     #command: python manage.py runserver 0.0.0.0:8000
-    command: bash -c "
-      python manage.py migrate --fake api zero
-      && python manage.py makemigrations
+    command: echo "from django.contrib.auth.models import User; User.objects.create_superuser('admin', 'admin@example.com', 'pass')" | ./manage.py shell
+    command: bash -c " 
+      python manage.py makemigrations api
       && python manage.py migrate
       && python manage.py runserver 0.0.0.0:8000
       "
     volumes:
-      - .:/code7
+      - .:/code_1
     ports:
       - "8000:8000"
     environment:
       - POSTGRES_NAME=postgres
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
+
     depends_on:
       - db
 
-            # python manage.py migrate --fake api zero
+      # python manage.py migrate --fake api zero
       # && python rm -rf migrations
       # && 
+
+      #       rm  api/migrations/* 
+      # &&
