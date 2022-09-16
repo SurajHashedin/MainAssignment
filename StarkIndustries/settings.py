@@ -60,6 +60,31 @@ REST_FRAMEWORK = {
         'rest_framework_simplejwt.authentication.JWTStatelessUserAuthentication',
     )
 }
+#implement to get django logs as time message, file, function name etc
+LOGGING = {
+'version': 1,
+'disable_existing_loggers': False,
+'formatters': {
+    'default': {
+        'format': '[DJANGO] %(levelname)s %(asctime)s %(module)s '
+                    '%(name)s.%(funcName)s:%(lineno)s: %(message)s'
+    },
+},
+'handlers': {
+    'console': {
+        'level': 'DEBUG',
+        'class': 'logging.StreamHandler',
+        'formatter': 'default',
+    }
+},
+'loggers': {
+    '': {
+        'handlers': ['console'],
+        'level': 'DEBUG',
+        'propagate': False,
+    }
+},
+}
 
 #Added t0ken generation which will refresh after 2 days
 SIMPLE_JWT = {
@@ -115,6 +140,7 @@ WSGI_APPLICATION = 'StarkIndustries.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
+# Modified for postgress db
 DATABASES = {
     'default': {
         # 'ENGINE': 'django.db.backends.sqlite3',

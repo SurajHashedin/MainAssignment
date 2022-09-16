@@ -1,0 +1,208 @@
+json
+
+1) Get a list of Projects and related issues
+{
+    "request_type": "Get_a_list_of_Projects_and_related_issues",
+    "request_json": "{}"
+}
+
+#####
+2)Get details of a Project by title
+
+{
+    "request_type": "Get_details_of_a_Project_by_title",
+    "request_json": "{\"project_title\":\"suraj\"}"
+}
+
+####
+3) Create a Project
+
+{
+    "request_type": "Create_a_Project",
+    "request_json": "{\"project_title\":\"new project\",\"project_description\":\"project_description2\",\"project_creator\":\"suraj1\"}"
+}
+
+########
+4) Update_a_Project
+{
+    "request_type": "Update_a_Project",
+    "request_json": "{\"project_id\":1,\"project_title\":\"updating the project title\"}"
+}
+
+#####
+
+5) Delete_a_Project
+{
+    "request_type": "Delete_a_Project",
+    "request_json": "{\"project_id\":1}"
+}
+
+
+####
+6)Get_a_list_of_Issues
+{
+    "request_type": "Get_a_list_of_Issues",
+    "request_json": "{}"
+}
+#####
+
+7)Get_details_of_an_Issue
+{
+    "request_type": "Get_a_list_of_Issues",
+    "request_json": "{}"
+}
+#####
+
+8)Create_an_Issue
+{
+    "request_type": "Create_an_Issue",
+    "request_json": "{\"issue_title\":\"issues_title\",\"issue_description\":\"issue_description\",\"issue_repoter\":\"phodu\",\"issue_type\":\"BUG\",\"issue_assignee\":\"phodu\",\"issue_status\":\"Open\",\"project_title\":\"1\",\"assignlabel\":\"assignlabel\",\"time_allocated_in_day\":1,\"comments\":\"comments\"}"
+
+}
+#####
+
+9)Update_an_Issue
+{
+    "request_type": "Update_an_Issue",
+    "request_json": "{\"issue_id\":1,\"issue_title\":\"issuewwws_title\",\"issue_description\":\"issuewww_description\"}"
+}
+#####
+
+
+10)Delete_an_Issue
+{
+    "request_type": "Delete_an_Issue",
+    "request_json": "{\"issue_id\":1,\"issue_title\":\"issuewwws_title\",\"issue_description\":\"issuewww_description\"}"
+}
+
+#####
+
+11)Get_a_list_of_Issues_under_a_Project
+{
+    "request_type": "Get_a_list_of_Issues_under_a_Project",
+    "request_json": "{\"project_title\":2}"
+}
+#####
+
+
+12)Get_details_of_an_Issue_under_a_Project
+{
+    "request_type": "Get_details_of_an_Issue_under_a_Project",
+    "request_json": "{\"project_title\":2}"
+}
+
+#####
+
+13)Create_an_Issue_under_a_Project
+{
+    "request_type": "Create_an_Issue_under_a_Project",
+    "request_json": "{\"issue_title\":\"issues_title\",\"issue_description\":\"issue_description\",\"issue_repoter\":\"phodu\",\"issue_type\":\"BUG\",\"issue_assignee\":\"phodu\",\"issue_status\":\"Open\",\"project_title\":\"2\"}"
+}
+#####
+
+
+14)Update_an_Issue_under_a_Project
+{
+    "request_type": "Update_an_Issue_under_a_Project",
+    "request_json": "{\"issue_id\":1,\"issue_title\":\"issues_title\",\"issue_description\":\"issue_description\",\"issue_repoter\":\"phodu\",\"issue_type\":\"BUG\",\"issue_assignee\":\"phodu\",\"issue_status\":\"Open\",\"project_title\":\"2\"}"
+}
+#####
+
+
+15)Delete_an_Issue_under_a_Project
+{
+    "request_type": "Delete_an_Issue_under_a_Project",
+    "request_json": "{\"project_title\":2,\"issue_id\":1}"
+}
+
+#####
+
+16)Assign_an_Issue_to_a_User
+{
+    "request_type": "Assign_an_Issue_to_a_User",
+    "request_json": "{\"issue_id\":2,\"issue_assignee\":\"suraj1\"}"
+}
+
+#####
+
+17)Update_the_Status_of_an_Issue
+{
+    "request_type": "Update_the_Status_of_an_Issue",
+    "request_json": "{\"issue_id\":2,\"issue_status\":\"Open\"}"
+}
+
+#####
+
+18)Search_Issue_on_title_and_description
+{
+    "request_type": "Search_Issue_on_title_and_description",
+    "request_json": "{\"issue_title\":\"issues_title\",\"issue_description\":\"issue_description\"}"
+}
+#####
+
+19)Get_a_list_of_users
+{
+    "request_type": "Get_a_list_of_users",
+    "request_json": "{}"
+}
+
+########################################
+20)Add_a_label_to_the_issue
+
+{
+    "request_type": "Add_a_label_to_the_issue",
+    "request_json": "{\"issue_id\":2}"
+}
+###
+21)Delete_a_label_from_the_issue
+{
+    "request_type": "Delete_a_label_from_the_issue",
+    "request_json": "{\"issue_id\":2}"
+}
+####
+22)Add_a_Watcher_to_an_issue
+{
+    "request_type": "Add_a_Watcher_to_an_issue",
+    "request_json": "{\"issue_id\":2,\"watchers\":\"Suraj\"}"
+}
+#####
+23)Delete_a_Watcher_from_the_issue
+{
+    "request_type": "Delete_a_Watcher_from_the_issue",
+    "request_json": "{\"issue_id\":2,\"watchers\":\"Suraj\"}"
+}
+###
+24)Create_a_Worklog_under_an_issue
+{
+    "request_type": "Create_a_Worklog_under_an_issue",
+    "request_json": "{\"issue_id\":2,\"time_allocated_in_day\":2}"
+}
+###
+25)Update_the_worklog_as_described_above
+{
+    "request_type": "Update_the_worklog_as_described_above",
+    "request_json": "{\"issue_id\":2,\"time_allocated_in_day\":2}"
+}
+###
+26)Delete_worklog_as_described_above
+{
+    "request_type": "Delete_worklog_as_described_above",
+    "request_json": "{\"issue_id\":2,\"time_allocated_in_day\":2}"
+}
+###
+27)Add_a_comment_under_an_issue
+{
+    "request_type": "Add_a_comment_under_an_issue",
+    "request_json": "{\"issue_id\":2,\"comments\":\"comments\"}"
+###
+28)Update_a_comment_as_described_above
+{
+    "request_type": "Update_a_comment_as_described_above",
+    "request_json": "{\"issue_id\":2,\"comments\":\"comments\"}"
+}
+####
+29)Delete_a_comment_as_described_above
+{
+    "request_type": "Delete_a_comment_as_described_above",
+    "request_json": "{\"issue_id\":2,\"comments\":\"comments\"}"
+}
