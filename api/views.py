@@ -95,9 +95,9 @@ class TicketRequest(viewsets.GenericViewSet,
         logger.debug('request type %s is recieved',request_type)
         try:
             events_log.objects.update_or_create(request_type=request_type, request_json=request_json )
-            ts = TicketService(request_type,request_json ).dispach_to_function_call_method()
+            ticketSer = TicketService(request_type,request_json ).dispach_to_function_call_method()
 
         except Exception as e:
             return Response({"Message": str(e), "Status_Message":"Failed", "Status": 400}) 
 
-        return ts 
+        return ticketSer
