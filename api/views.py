@@ -81,7 +81,7 @@ class TicketRequest(viewsets.GenericViewSet,
                               mixins.CreateModelMixin,
                               ): 
     '''
-    It except all request of users like create,update,delete project issue etc
+    It accept all request of users like create,update,delete project issue etc
     '''
     serializer_class = TicketSerializer
     permission_classes = [IsAuthenticated]
