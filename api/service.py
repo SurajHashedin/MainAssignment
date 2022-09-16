@@ -400,8 +400,7 @@ class TicketService:
 
         issuetable = issues_table.objects.filter(issue_id=issue_id)
         try:
-            issuetable.delete()
-
+            issuetable.update(assignlabel='')
         except Exception as e:
             return Response({"Message": str(e), "Status_Message":"Failed", "Status": 400}) 
 
@@ -429,12 +428,12 @@ class TicketService:
 
         data = json.loads(self.request_json)
         issue_id = data['issue_id']
-        watchers = data['watchers']
+        watchers = ''
         logger.debug('request is processing')
 
-        issuetable = issues_table.objects.filter(issue_id=issue_id, watchers=watchers)
+        issuetable = issues_table.objects.filter(issue_id=issue_id)
         try:
-            issuetable.delete()
+            issuetable.update(watchers=watchers)
 
         except Exception as e:
             return Response({"Message": str(e), "Status_Message":"Failed", "Status": 400}) 
@@ -479,12 +478,11 @@ class TicketService:
 
         data = json.loads(self.request_json)
         issue_id = data['issue_id']
-        time_allocated_in_day = data['time_allocated_in_day']
         logger.debug('request is processing')
 
-        issuetable = issues_table.objects.filter(issue_id=issue_id,time_allocated_in_day=time_allocated_in_day)
+        issuetable = issues_table.objects.filter(issue_id=issue_id)
         try:
-            issuetable.delete()
+            issuetable.update(time_allocated_in_day=0)
 
         except Exception as e:
             return Response({"Message": str(e), "Status_Message":"Failed", "Status": 400}) 
@@ -514,12 +512,12 @@ class TicketService:
 
         data = json.loads(self.request_json)
         issue_id = data['issue_id']
-        comments = data['comments']
         logger.debug('request is processing')
 
-        issuetable = issues_table.objects.filter(issue_id=issue_id,comments=comments)
+        issuetable = issues_table.objects.filter(issue_id=issue_id)
         try:
-            issuetable.delete()
+            issuetable.update(comments='')
 
         except Exception as e:
-            return Response({"Message": 'Delete_a_comment_as_described_above', "Status_Message":"Failed", "Status": 400}) 
+            return Response({"Message": "Delete_a_comment_as_described_above", "Status_Message":"Failed", "Status": 400}) 
+        return Response({"Message": "Update_a_comment_as_described_above", "Status_Message":"Success", "Status": 200})
